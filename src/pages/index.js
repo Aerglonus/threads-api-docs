@@ -19,7 +19,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/current/basics/Getting-Started">
+            to="/docs/basics/Getting-Started">
 
             <div className='button-text'>
               <FontAwesomeIcon icon="fa-solid fa-book" />
