@@ -1,0 +1,16 @@
+---
+description: Unlike a post in Threads
+---
+
+:::info INFO
+Requires Authentication
+:::
+Unlike a post in Threads. | uses `getPostIDfromThreadID` or `getPostIDfromURL`
+
+```typescript
+const threadURL = "https://www.threads.net/t/CugK35fh6u2";
+const postIDToLike = threadsAPI.getPostIDfromURL(threadURL); // or use `getPostIDfromThreadID`
+
+// 💡 Uses current credentials
+await threadsAPI.unlike(postIDToLike);
+```

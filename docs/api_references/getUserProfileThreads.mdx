@@ -1,0 +1,14 @@
+---
+description: User threads without authentication.
+---
+
+:::info
+Does not requires authentication
+:::
+
+Retrieves the user threads without authenticating.
+
+```typescript
+const posts = await threadsAPI.getUserProfileThreads(userID);
+console.log(JSON.stringify(posts));
+```

@@ -1,0 +1,14 @@
+---
+description: Get the postID from a given URL
+---
+
+:::info INFO
+Does not requires authentication
+:::
+
+Retrieves the `postID` from a Thread URL.
+
+```typescript
+const threadURL = "https://www.threads.net/t/CugK35fh6u2";
+const postID = await threadsAPI.getPostIDfromURL(threadURL);
+```

@@ -1,0 +1,13 @@
+---
+description: Generate postID from a ThreadID
+---
+
+:::info INFO
+Does not requires authentication
+:::
+Generates the `postID` from a given `ThreadID`.
+
+```typescript
+const threadID = "CugK35fh6u2";
+const postID = await threadsAPI.getPostIDfromThreadID(threadID);
+```

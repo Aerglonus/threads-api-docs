@@ -1,0 +1,14 @@
+---
+description: Get given user replies threads.
+---
+
+:::info
+Does not requires authentication
+:::
+
+Retrieves a given user replies
+
+```typescript
+const replies = await threadsAPI.getUserProfileReplies(userID);
+console.log(JSON.stringify(replies));
+```

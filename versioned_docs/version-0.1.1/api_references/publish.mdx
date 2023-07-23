@@ -1,0 +1,105 @@
+---
+description: Make a post to Threads
+---
+
+:::info INFO
+Requires Authentication
+:::
+:::tip Recommended
+Is recommended to use `token` and `userID` instead of `username` and `password`
+:::
+Publish a post to Threads
+
+```typescript
+const publish = await threadsAPI.publish(
+  text: 'Hello World'
+)
+```
+
+| **Options**    |                    | **Parametes**                                       | **Description**            |
+| -------------- | ------------------ | --------------------------------------------------- | -------------------------- |
+| `text`         | `string`           |                                                     | Post text                  |
+| `replyControl` | `PostReplyControl` | `everyone`, `accounts_you_follow`, `mentioned_only` | Threads user password      |
+| `parentPostID` | `string`           |                                                     | Post to reply              |
+| `quotedPostID` | `string`           |                                                     | Post to quote              |
+| `attachment`   | `PostAttachment`   | `url`,`image`, `sidecar`                            | Attach images/urls to post |
+
+## Publish types
+
+### Reply-control
+
+```typescript
+await threadsAPI.publish({
+	text: "🤖 Threads with Reply Control",
+	replyControl: "accounts_you_follow", // 'everyone' | 'accounts_you_follow' | 'mentioned_only'
+});
+```
+
+### With image
+
+:::caution Current issue
+Theres a current issue [#111](https://github.com/junhoyeo/threads-api/issues/111) with images being `.png` failing.
+:::
+
+```typescript
+const publish = await threadsAPI.publish(
+  text: 'Hello World'
+  attachment: {
+    image: 'https://github.com/junhoyeo/threads-api/raw/main/.github/cover.jpg',
+  }
+)
+```
+
+### With url
+
+```typescript
+const publish = await threadsAPI.publish(
+  text: 'Hello World'
+  attachment: {
+    url: 'https://github.com/junhoyeo/threads-api',
+  }
+)
+```
+
+### Sidecar - multiple images
+
+```typescript
+await threadsAPI.publish({
+  text: '🤖 Threads with Sidecar',
+  attachment: {
+    sidecar: [
+      'https://github.com/junhoyeo/threads-api/raw/main/.github/cover.jpg',
+      'https://github.com/junhoyeo/threads-api/raw/main/.github/cover.jpg',
+      { path: './zuck.jpg' }, // ThreadsAPI.ExternalImage
+      { type: '.jpg', data: Buffer.from(…) }, // ThreadsAPI.RawImage
+    ],
+  },
+});
+```
+
+## Publish actions
+
+### Reply to threads
+
+```typescript
+const parentURL = "https://www.threads.net/t/CugF-EjhQ3r";
+const parentPostID = threadsAPI.getPostIDfromURL(parentURL); // or use `getPostIDfromThreadID`
+
+await threadsAPI.publish({
+	text: "🤖 Beep",
+	link: "https://github.com/junhoyeo/threads-api",
+	parentPostID: parentPostID,
+});
+```
+
+### Quote a thread
+
+```typescript
+const threadURL = "https://www.threads.net/t/CuqbBI8h19H";
+const postIDToQuote = threadsAPI.getPostIDfromURL(threadURL); // or use `getPostIDfromThreadID`
+
+await threadsAPI.publish({
+	text: "🤖 Quote a Thread",
+	quotedPostID: postIDToQuote,
+});
+```

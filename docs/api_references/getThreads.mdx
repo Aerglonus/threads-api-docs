@@ -1,0 +1,15 @@
+---
+description: Get replies from a given Thread
+---
+
+:::info INFO
+Does not requires authentication
+:::
+Retrieves the threads from a given Thread.
+
+```typescript
+const postID = threadsAPI.getPostIDfromURL(
+	"https://www.threads.net/t/CuX_UYABrr7/?igshid=MzRlODBiNWFlZA==",
+);
+const post = await threadsAPI.getThreads(postID);
+```

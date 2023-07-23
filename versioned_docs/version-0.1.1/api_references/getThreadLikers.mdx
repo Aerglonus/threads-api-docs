@@ -1,0 +1,13 @@
+---
+description: Get users that liked a given post
+---
+
+:::info INFO
+Does not requires authentication
+:::
+Retrive all the users that liked a Thread.
+
+```typescript
+const postID = "https://www.threads.net/t/CugK35fh6u2";
+const likers = await threadsAPI.getThreadLikers("postID");
+```

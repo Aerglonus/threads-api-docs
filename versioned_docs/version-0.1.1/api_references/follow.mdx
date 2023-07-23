@@ -1,0 +1,15 @@
+---
+description: Follow a given user on Threads
+---
+
+:::info INFO
+Requires Authentication
+:::
+Follow a given user on Threads | uses `getUserIDfromUsername`
+
+```typescript
+const userIDToFollow = await threadsAPI.getUserIDfromUsername("zuck");
+
+// 💡 Uses current credentials
+await threadsAPI.follow(userIDToFollow);
+```

@@ -1,0 +1,15 @@
+---
+description: Unfollow given user on Threads
+---
+
+:::info INFO
+Requires Authentication
+:::
+Unfollow given user on Threads | uses `getUserIDfromUsername`
+
+```typescript
+const userIDToFollow = await threadsAPI.getUserIDfromUsername("zuck");
+
+// 💡 Uses current credentials
+await threadsAPI.unfollow(userIDToFollow);
+```

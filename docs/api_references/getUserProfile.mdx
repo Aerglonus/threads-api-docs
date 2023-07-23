@@ -1,0 +1,14 @@
+---
+description: Retrieves user data.
+---
+
+:::info
+Does not requires authentication.
+:::
+
+Retrieves the user profile data.
+
+```typescript
+const user = await threadsAPI.getUserProfile(userID);
+console.log(JSON.stringify(user));
+```

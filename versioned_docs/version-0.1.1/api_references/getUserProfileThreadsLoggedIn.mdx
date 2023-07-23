@@ -1,0 +1,15 @@
+---
+description: User threads with Authentication
+---
+
+:::info
+Requires Authentication.
+:::
+
+Retrives the user threads with pagination.
+
+```typescript
+const { threads, next_max_id: cursor } =
+	await threadsAPI.getUserProfileThreadsLoggedIn(userID);
+console.log(JSON.stringify(threads));
+```

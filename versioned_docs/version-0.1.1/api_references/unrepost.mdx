@@ -1,0 +1,16 @@
+---
+description: Unrepost a post from Threads.
+---
+
+:::info INFO
+Requires Authentication
+:::
+Unrepost a post from Threads. | uses `getPostIDfromThreadID` or `getPostIDfromURL`
+
+```typescript
+const threadURL = "https://www.threads.net/t/CugK35fh6u2";
+const postIDToRepost = threadsAPI.getPostIDfromURL(threadURL); // or use `getPostIDfromThreadID`
+
+// 💡 Uses current credentials
+await threadsAPI.unrepost(postIDToRepost);
+```

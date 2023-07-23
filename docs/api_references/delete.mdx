@@ -1,0 +1,24 @@
+---
+description: Deletes a post from Threads
+sidebar_label: delete
+---
+
+:::info INFO
+Requires Authentication
+:::
+Deletes a given post from Threads. | Requires: `postID`
+
+```typescript
+await threadsAPI.delete(postID);
+```
+
+**Example:**
+
+```typescript
+const postID = await threadsAPI.publish({
+	text: "🤖 This message will self-destruct in 5 seconds.",
+});
+
+await new Promise((resolve) => setTimeout(resolve, 5_000));
+await threadsAPI.delete(postID);
+```

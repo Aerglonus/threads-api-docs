@@ -1,0 +1,28 @@
+---
+sidebar_label: ThreadsAPI Client
+sidebar_position: 1
+description: Client method to connect to threads.
+---
+
+Client method to login to Threads.
+
+```typescript
+const threadsAPI = new ThreadsAPI({});
+```
+
+| **Key**         | **Type**  | **Default**          | **Description**                                                                 |
+| --------------- | --------- | -------------------- | ------------------------------------------------------------------------------- |
+| `verbose`       | `boolean` | `false`              | Prints response data or erros                                                   |
+| `token`         | `string`  | `undefined`          | User token bearer                                                               |
+| `fbLSDToken`    | `string`  | `default`            | User LSD Token                                                                  |
+| `noUpdateLSD`   | `boolean` | `false`              | Update user LSD Token                                                           |
+| `noUpdateToken` | `boolean` | `false`              | Update user bearer token                                                        |
+| `httpAgent`     | `config`  | `AxiosRequestConfig` | Axios default config                                                            |
+| `httpsAgent`    | `config`  | `AxiosRequestConfig` | Axios default config                                                            |
+| `username`      | `string`  | `undefined`          | User Threads username                                                           |
+| `password`      | `string`  | `undefined`          | User Threads password                                                           |
+| `deviceID`      | `string`  | `auto generated`     | Android device ID                                                               |
+| `device`        | `config`  | `default`            | Device identifiers can take `manufacturer`, `os_release`, `os_version`, `model` |
+| `userID`        | `string`  | `undefined`          | User ID                                                                         |
+| `local`         | `string`  | `undefined`          | locale                                                                          |
+| `maxRetries`    | `number`  | `1`                  | number of maxRetries to login                                                   |

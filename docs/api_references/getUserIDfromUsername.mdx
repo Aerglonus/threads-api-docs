@@ -1,0 +1,16 @@
+---
+description: Retrieves userID from username
+---
+
+:::info INFO
+Does not requires authentication
+:::
+Retrieves the userID from given username
+
+```typescript
+const userID = await threadsAPI.getUserIDfromUsername("username");
+```
+
+| **requires** | **Type** | **Default** | **Description**  |
+| ------------ | -------- | ----------- | ---------------- |
+| `username`   | `string` | `undefined` | Threads username |

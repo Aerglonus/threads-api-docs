@@ -1,0 +1,14 @@
+---
+description: Retrives given user replies.
+---
+
+:::info
+Requires Authentication
+:::
+Retrieves given user replies posts with pagination.
+
+```typescript
+const { threads, next_max_id: cursor } =
+	await threadsAPI.getUserProfileRepliesLoggedIn(userID);
+console.log(JSON.stringify(threads));
+```

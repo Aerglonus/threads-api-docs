@@ -1,0 +1,14 @@
+---
+description: Get authenticated user timeline.
+---
+
+:::info INFO
+Requires authentication
+:::
+
+Retrives the authenticated user timeline.
+
+```typescript
+const { items: threads, next_max_id: cursor } = await threadsAPI.getTimeline();
+console.log(JSON.stringify(threads));
+```

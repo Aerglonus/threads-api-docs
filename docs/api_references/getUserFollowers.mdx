@@ -1,0 +1,22 @@
+---
+description: Retrieves user follower list.
+---
+
+:::info
+Requires Authentication
+:::
+
+Retrieves the given user follower list with pagination.
+
+```typescript
+const { users, next_max_id: cursor } = await threadsAPI.getUserFollowers(
+	userID,
+);
+console.log(JSON.stringify(users));
+if (cursor) {
+	const threads = await threadsAPI.getUserFollowers(userID, {
+		maxID: cursor,
+	});
+	console.log(JSON.stringify(threads));
+}
+```

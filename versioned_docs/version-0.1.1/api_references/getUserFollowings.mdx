@@ -1,0 +1,16 @@
+---
+description: Retrieves user following list.
+---
+
+:::info
+Requires Authentication
+:::
+
+Retrieves the list of users the given user is following.
+
+```typescript
+const { users, next_max_id: cursor } = await threadsAPI.getUserFollowings(
+	userID,
+);
+console.log(JSON.stringify(users));
+```

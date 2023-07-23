@@ -1,0 +1,45 @@
+---
+title: Usage
+sidebar_position: 2
+description: Learn how to use the API
+---
+
+# Basic Usage
+
+## Creating the Client
+
+The first thing to do is you need to create a Client. The most basic client configuration is passing the properties `username` and `password`
+
+```typescript
+const threadsAPI = new ThreadsAPI({
+	username: "", // here goes your Threads/Instagram username
+	password: "",
+});
+```
+
+Once you created the client its recommended to run the `login()` method to retrieve the token and userID.
+
+```typescript
+const credentials = await ThreadsAPI.login();
+// Response:
+// {
+//  token: //bearer-token,
+//  userID: //your-username-id
+// }
+```
+
+:::info Note:
+Its recommended that once you get the Bearer Token and userID store them and pass them directly in the client options or through and .env file
+:::
+
+## Making your first Threads post.
+
+threads-api allows you to make a post with multiple images, quote a thread or reply to a thread. For now to do a simple post you can do the following:
+
+```typescript
+const post = await threadsAPI.publish({
+	text: "Hello World!",
+});
+```
+
+The `client` and `publish` method contain more options that you can pass to them like `deviceID`, `device identifiers` to prevent the `unrecognized login` notification from Instagram, `attachments` that allows you to pass urls, images, etc. you can learn more in [references](/docs/references/).
