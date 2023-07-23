@@ -92,6 +92,10 @@
   height: 30px;
 }
 
+.button-text svg {
+  fill: white
+}
+
 .button-text img {
   margin-left: 5px;
 }
