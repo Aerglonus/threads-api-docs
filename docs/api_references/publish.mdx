@@ -80,7 +80,9 @@ await threadsAPI.publish({
 ## Publish actions
 
 ### Reply to threads
-
+:::info Note
+This can also be used to post multi-threads
+:::
 ```typescript
 const parentURL = "https://www.threads.net/t/CugF-EjhQ3r";
 const parentPostID = threadsAPI.getPostIDfromURL(parentURL); // or use `getPostIDfromThreadID`
